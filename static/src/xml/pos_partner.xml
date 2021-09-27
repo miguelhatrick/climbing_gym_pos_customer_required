@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" inherit='' xml:space="preserve">
+
+    <t t-extend="ClientLine">
+    <t t-jquery="tr:last" t-operation="append">
+        <td><t t-esc='partner.climbing_gym_member_membership_active' /></td>
+        <td><t t-esc='partner.climbing_gym_member_membership_valid' /></td>
+    </t>
+    </t>
+
+    <t t-extend="ClientLine">
+        <t t-jquery="td:first" t-operation="replace">
+            <td>
+                <t t-if="partner.climbing_gym_main_member_membership_id == false">
+                    <t t-esc='partner.name'/>
+                </t>
+                <t t-else="">
+                    <t t-esc='partner.climbing_gym_main_member_membership_name'/>
+                </t>
+            </td>
+        </t>
+    </t>
+
+    <t t-extend="ClientListScreenWidget">
+        <t t-jquery="table.client-list tr:last" t-operation="append">
+            <th>Active membership</th>
+            <th>Valid membership</th>
+     </t>
+    </t>
+
+
+</templates>

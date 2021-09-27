@@ -15,12 +15,19 @@
     'license': 'AGPL-3',
     'depends': [
         'point_of_sale',
+        'pos_customer_required',
         'climbing_gym'
     ],
     'data': [
         'static/src/xml/templates.xml',
+
+
         'views/pos_config_view.xml',
         'views/pos_order_view.xml',
     ],
     'installable': True,
+    'qweb': [
+        'static/src/xml/pos_partner.xml',
+
+    ],
 }
